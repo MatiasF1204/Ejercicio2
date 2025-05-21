@@ -46,7 +46,7 @@ $cantidad = mysqli_num_rows($respuesta);
                         <td> <?php echo $auto['pventa'] ?> </td>
                         <td> <?php echo $auto['nomyape'] ?> </td>
                         <td><a href="">MODIFICAR</a></td>
-                        <td><a href="">ELIMINAR</a></td>
+                        <td><a href="./EliminarAuto.php?cod_auto=<?php echo $auto['cod_auto'] ?>">ELIMINAR</a></td>
                     </tr>
                 <?php endwhile ?>
             </tbody>
