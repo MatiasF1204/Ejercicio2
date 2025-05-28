@@ -2,7 +2,9 @@
 include '../conexion.php';
 
 $cod_auto = $_GET['cod_auto'];
-$sql = "SELECT * FROM auto WHERE cod_auto = '$cod_auto'";
+$sql = "SELECT * FROM auto 
+        WHERE cod_auto = '$cod_auto'
+        ";
 $resultado = mysqli_query($conexion, $sql);
 $auto = mysqli_fetch_assoc($resultado);
 
@@ -16,13 +18,13 @@ $resultado_cliente = mysqli_query($conexion, $sql_cliente);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Auto</title>
+    <title>Modificar Auto</title>
 </head>
 
 <body>
-    <h1>Registrar Auto</h1>
+    <h1>Modificar Auto</h1>
 
-    <form action="./ProcesarRegistrarAuto.php" method="post">
+    <form action="./ActualizarAuto.php" method="post">
 
         <input type="hidden" name="cod_auto" value="<?= $auto['cod_auto'] ?>">
 
