@@ -20,7 +20,7 @@ $resultado = mysqli_query($conexion, $sql);
 
 if ($resultado) {
     echo "Auto modificado con éxito.";
-    echo "<a href='../../index.html'>Volver</a>";
+    echo "<br> <a href='../../menu.html'>Volver al menú</a>";
 } else {
     echo "Error: ". mysqli_error($conexion);
 }

@@ -40,7 +40,7 @@ $cantidad = mysqli_num_rows($resultado);
                         <td> <?php echo $cliente['ciudad'] ?> </td>
                         <td> <?php echo $cliente['telefono'] ?> </td>
                         <td> <?php echo $cliente['falta'] ?> </td>
-                        <td><a href="">MODIFICAR</a></td>
+                        <td><a href="./ModificarCliente.php?cod_cliente=<?php echo $cliente['cod_cliente'] ?>">MODIFICAR</a></td>
                         <td><a href="./EliminarCliente.php?cod_cliente=<?php echo $cliente['cod_cliente'] ?>">ELIMINAR</a></td>
                     </tr>
                 <?php endwhile ?>

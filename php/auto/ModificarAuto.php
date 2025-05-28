@@ -26,7 +26,7 @@ $resultado_cliente = mysqli_query($conexion, $sql_cliente);
 
     <form action="./ActualizarAuto.php" method="post">
 
-        <input type="hidden" name="cod_auto" value="<?= $auto['cod_auto'] ?>">
+        <input type="hidden" name="cod_auto" value="<?php echo $auto['cod_auto'] ?>">
 
 
         <label for="marca">Marca:</label>

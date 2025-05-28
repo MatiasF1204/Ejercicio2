@@ -21,14 +21,17 @@ $cliente = mysqli_fetch_assoc($resultado);
 <body>
     <h1>Modificar Cliente</h1>
 
-    <form action="../php/cliente/RegistrarCliente.php" method="post">
-        <input type="hidden" name="cod_cliente" value="<?php $cliente['cod_cliente'] ?>">
+    <form action="./ActualizarCliente.php" method="post">
+        <input type="hidden" name="cod_cliente" value="<?php echo $cliente['cod_cliente'] ?>">
+
         <label for="nomyape">Nombre completo:</label>
         <input type="text" name="nomyape" id="nomyape" required minlength="3">
         <br><br>
+
         <label for="direccion">Dirección:</label>
         <input type="text" name="direccion" id="direccion" required minlength="3">
         <br><br>
+
         <label for="ciudad">Ciudad:</label>
         <select name="ciudad" id="ciudad" required>
             <option value="">-- Ingrese una opción --</option>
@@ -37,12 +40,15 @@ $cliente = mysqli_fetch_assoc($resultado);
             <option value="Ushuaia">Ushuaia</option>
         </select>
         <br><br>
+
         <label for="telefono">Teléfono</label>
         <input type="tel" name="telefono" id="telefono" required minlength="3" min="0">
         <br><br>
+
         <label for="falta">Fecha de alta:</label>
         <input type="date" name="falta" id="falta" required>
         <br><br>
+
         <button type="submit">Enviar</button>
         <br><br>
     </form>
