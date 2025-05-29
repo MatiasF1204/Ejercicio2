@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar Revisiones</title>
+  </head>
+
+  <body>
+    <h1>Ingrese periodo de revisión</h1>
+    <form action="../php/revision/ProcesarBuscarRevision.php" method="post">
+      <label for="fingreso">Fecha de ingreso:</label>
+      <input type="date" name="fingreso" id="fingreso" required />
+      <br /><br />
+
+      <label for="fegreso">Fecha de egreso:</label>
+      <input type="date" name="fegreso" id="fegreso" required />
+      <br /><br />
+
+      <button type="submit">Enviar</button>
+    </form>
+    <br />
+    <a href="../../menu.html">Volver al menú</a>
+  </body>
+</html>
