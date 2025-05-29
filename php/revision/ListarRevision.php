@@ -55,7 +55,7 @@ $cantidad = mysqli_num_rows($resultado);
                         <td><?php echo $revision['descripcion'] ?></td>
                         <td><?php echo $revision['marca'] ?></td>
                         <td><?php echo $revision['modelo'] ?></td>
-                        <td><a href="">MODIFICAR</a></td>
+                        <td><a href="./ModificarRevision.php?cod_revision=<?php echo $revision['cod_revision'] ?>">MODIFICAR</a></td>
                         <td><a href="./EliminarRevision.php?cod_revision=<?php echo $revision['cod_revision'] ?>">ELIMINAR</a></td>
                     </tr>
                 <?php endwhile ?>
