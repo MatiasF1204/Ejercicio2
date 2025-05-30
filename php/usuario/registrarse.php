@@ -1,5 +1,5 @@
 <?php
-include './conexion.php';
+include '../conexion.php';
 
 // Obtenemos usuario y contraseña enviados por el FormRegistrarse.html
 $user = $_POST['user'];
@@ -13,7 +13,7 @@ $respuesta = mysqli_query($conexion, $sql);
 
 if ($respuesta) {
     echo "Usuario creado exitosamente.";
-    echo "<br><a href='../index.html'>Volver</a>";
+    echo "<br><a href='../../index.html'>Volver</a>";
 } else {
     echo "Error al crear usuario: " . mysqli_error($conexion);
 }

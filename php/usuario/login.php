@@ -1,6 +1,6 @@
 <?php
 session_start();
-include './conexion.php';
+include '../conexion.php';
 
 // Obtenemos usuario y contraseñas enviados por el index.html
 $user = $_POST['user'];
@@ -23,9 +23,9 @@ if ($cantidad == 1) {
     $_SESSION['cod_usuario'] = $usuario['cod_usuario'];
 
     // Redirigimos a la página principal
-    header("Location: ../menu.html");
+    header("Location: ../../menu.html");
     exit();
 } else {
     echo "Usuario o contraseña incorrectas.";
-    echo "<br><br><a href='../index.html'>Volver</a>";
+    echo "<br><br><a href='../../index.html'>Volver</a>";
 }
