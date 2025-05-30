@@ -1,20 +1,20 @@
 <?php
 include '../conexion.php';
 
-$fingreso = $_POST['fingreso'];
-$fegreso = $_POST['fegreso'];
+$cod_cliente = $_POST['cod_cliente'];
 
 $sql = "SELECT revision.cod_revision, revision.fingreso, revision.fegreso,
-                revision.estado, revision.cambio_filtro, revision.cambio_aceite,
-                revision.cambio_freno, revision.descripcion,
-                auto.marca, auto.modelo
+               revision.estado, revision.cambio_filtro, revision.cambio_aceite,
+               revision.cambio_freno, revision.descripcion,
+               auto.marca, auto.modelo
         FROM revision
         INNER JOIN auto
         ON revision.cod_auto = auto.cod_auto
-        WHERE fingreso BETWEEN '$fingreso' AND '$fegreso'
+        WHERE auto.cod_cliente = '$cod_cliente'
         ";
 
 $resultado = mysqli_query($conexion, $sql);
+
 $cantidad = mysqli_num_rows($resultado);
 ?>
 
@@ -24,12 +24,11 @@ $cantidad = mysqli_num_rows($resultado);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buscar Cliente</title>
 </head>
 
 <body>
-    <h2>Revisiones Encontradas</h2>
-
+    <h1>Revisiones Encontradas:</h1>
     <?php if ($cantidad > 0): ?>
         <table border="1">
             <thead>
@@ -64,10 +63,11 @@ $cantidad = mysqli_num_rows($resultado);
             </tbody>
         </table>
     <?php else: ?>
-        <p>No hay revisiones registradas en esas fechas.</p>
+        <p>No hay revisiones registradas para ese cliente.</p>
     <?php endif ?>
-        <br>
-        <a href="../../pages/FormBuscarRevision.html">Volver</a>
+    <br>
+    <a href="./BuscarCliente.php">Volver</a>
+
 </body>
 
 </html>
